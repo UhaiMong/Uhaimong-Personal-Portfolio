@@ -1,17 +1,15 @@
-import React from "react";
 import { Outlet } from "react-router-dom";
-import Footer from "../components/Footer";
 import Sidebar from "../components/Sidebar";
 
 const MainLayout = () => {
   return (
-    <div className="flex h-screen overflow-hidden">
-      <div className="flex-1 overflow-y-auto">
+    <div className="grid grid-cols-12 bg-[var(--color-secondary-bg)] h-screen">
+      <div className="col-span-11 overflow-y-auto">
         <Outlet />
-        <Footer />
       </div>
-
-      <Sidebar />
+      <div className="col-span-1">
+        <Sidebar />
+      </div>
     </div>
   );
 };
