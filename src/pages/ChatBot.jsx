@@ -187,7 +187,7 @@ export default function ChatBot() {
         <title>Chat Bot</title>
         <meta name="description" content="Perfonal Portfolio Application" />
       </Helmet> */}
-      <section className="w-10/12 h-screen px-6 lg:px-16 py-16 flex flex-col items-center text-white">
+      <section className="w-10/12  px-6 lg:px-16 py-16 flex flex-col items-center text-white">
         <h2 className="text-4xl font-bold mb-12 science-font">I'm Bot🤖</h2>
 
         <div className="w-full bg-[var(--color-secondary-bg)] rounded-xl shadow-lg border border-white/10 p-4 flex flex-col justify-between gap-4">
@@ -220,7 +220,7 @@ export default function ChatBot() {
           </div>
 
           {/* Input */}
-          <div className="flex gap-2">
+          <div className="flex flex-wrap gap-2">
             <input
               type="text"
               value={input}

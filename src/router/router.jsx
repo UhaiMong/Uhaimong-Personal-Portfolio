@@ -16,35 +16,35 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        Component: Home,
+        element: <Home />,
       },
       {
         path: "/aboutme",
-        Component: Aboutme,
+        element: <Aboutme />,
       },
       {
         path: "/contact",
-        Component: Contact,
+        element: <Contact></Contact>,
       },
       {
         path: "/projects",
-        Component: Projects,
+        element: <Projects />,
       },
       {
         path: "/resume",
-        Component: Resume,
+        element: <Resume />,
       },
       {
         path: "/services",
-        Component: Services,
+        element: <Services />,
       },
       {
         path: "/skills",
-        Component: Skills,
+        element: <Skills />,
       },
       {
         path: "/ai",
-        Component: ChatBot,
+        element: <ChatBot />,
       },
       {
         path: "*",

@@ -21,7 +21,7 @@ const Sidebar = () => {
       <div className="flex flex-col gap-y-2">
         <div className="relative hidden md:block">
           <img src="UhaiMongProfilePicture.jpg" alt="Uhai Mong Profile Image" />
-          <h1 className="text-2xl font-bold text-center text-white absolute bg-[var(--color-primary)] w-full -mt-8">
+          <h1 className="text-[20px] font-bold text-center text-white absolute bg-[var(--color-primary)] w-full -mt-8 uppercase">
             Uhai Mong
           </h1>
         </div>

@@ -1,4 +1,5 @@
 import Typewriter from "typewriter-effect";
+import { motion } from "framer-motion";
 const Home = () => {
   return (
     <>
@@ -6,7 +7,12 @@ const Home = () => {
         <title>Uhai Mong</title>
         <meta name="description" content="Perfonal Portfolio Application" />
       </Helmet> */}
-      <div>
+      <motion.div
+        initial={{ opacity: 0, x: -100, scale: 0.95 }}
+        whileInView={{ opacity: 1, x: 0, scale: 1 }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
+        viewport={{ once: true }}
+      >
         <div className="relative w-full h-screen bg-[url('hero.jpg')] bg-cover bg-no-repeat bg-center">
           <div className="absolute inset-0 bg-black opacity-80"></div>
           <div className="absolute inset-0 flex flex-col items-center justify-center">
@@ -42,7 +48,7 @@ const Home = () => {
           alt="Banner Image"
         />
       </div> */}
-      </div>
+      </motion.div>
     </>
   );
 };

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { FaLaptopCode, FaMobileAlt, FaPaintBrush } from "react-icons/fa";
+import { MdHomeRepairService } from "react-icons/md";
 
 const servicesData = [
   {
@@ -27,31 +28,36 @@ export default function Services() {
         <meta name="description" content="Perfonal Portfolio Application" />
       </Helmet>
       ; */}
-      <section
+      <motion.section
+        initial={{ x: -100 }}
+        whileInView={{ x: 0 }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
+        viewport={{ once: true }}
         id="services"
-        className="min-h-screen w-11/12 px-6 lg:px-16 py-16 text-white"
       >
-        <h2 className="text-4xl font-bold mb-12 text-center science-font">
-          Services 🛠
-        </h2>
-
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {servicesData.map((service, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: i * 0.2 }}
-              viewport={{ once: true }}
-              className="bg-[var(--color-secondary-bg)] rounded-xl p-6 flex flex-col items-center text-center cursor-pointer shadow-lg border border-white/10 hover:border-[var(--color-primary)] hover:scale-105 transition"
-            >
-              <div className="mb-4">{service.icon}</div>
-              <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-              <p className="text-sm opacity-80">{service.desc}</p>
-            </motion.div>
-          ))}
+        <div className="w-11/12 mx-auto h-14 px-5 flex justify-between items-center border-b-2 border-indigo-500 text-3xl font-bold text-[var(--color-text)]">
+          <h1>My Services</h1>
+          <MdHomeRepairService />
         </div>
-      </section>
+        <div className="w-11/12 px-6 lg:px-16 py-16 text-white">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {servicesData.map((service, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: i * 0.2 }}
+                viewport={{ once: true }}
+                className="bg-[var(--color-secondary-bg)] rounded-xl p-6 flex flex-col items-center text-center cursor-pointer shadow-lg border border-white/10 hover:border-[var(--color-primary)] hover:scale-105 transition"
+              >
+                <div className="mb-4">{service.icon}</div>
+                <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
+                <p className="text-sm opacity-80">{service.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </motion.section>
     </>
   );
 }
