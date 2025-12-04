@@ -6,51 +6,8 @@ import { SiHyperskill } from "react-icons/si";
 import { MdContactPhone, MdHomeRepairService } from "react-icons/md";
 import { TbFileCv } from "react-icons/tb";
 import { FaRobot } from "react-icons/fa";
-import { a } from "motion/react-client";
 
 const Sidebar = () => {
-  const linksData = [
-    {
-      path: "/",
-      icon: <IoHome />,
-      level: <a className="md:block hidden">Home</a>,
-    },
-    {
-      path: "/aboutme",
-      icon: <IoPersonSharp />,
-      level: <a className="md:block hidden">About Me</a>,
-    },
-    {
-      path: "/projects",
-      icon: <GrTasks />,
-      level: <a className="md:block hidden">Projects</a>,
-    },
-    {
-      path: "/skills",
-      icon: <SiHyperskill />,
-      level: <a className="md:block hidden">Skills</a>,
-    },
-    {
-      path: "/services",
-      icon: <MdHomeRepairService />,
-      level: <a className="md:block hidden">Services</a>,
-    },
-    {
-      path: "/resume",
-      icon: <TbFileCv />,
-      level: <a className="md:block hidden">Resume</a>,
-    },
-    {
-      path: "/contact",
-      icon: <MdContactPhone />,
-      level: <a className="md:block hidden">Conctact</a>,
-    },
-    {
-      path: "/ai",
-      icon: <FaRobot />,
-      level: <a className="md:block hidden">Ask AI</a>,
-    },
-  ];
   const linkStyle = ({ isActive }) =>
     "px-3 py-2 rounded-md font-medium transition delay-150 duration-300 ease-in-out block text-center text-[var(--color-text)] flex justify-center md:justify-start md:ml-5 ml-0 items-center gap-x-4 " +
     (isActive
@@ -68,12 +25,38 @@ const Sidebar = () => {
             Uhai Mong
           </h1>
         </div>
-        {linksData.map((link) => (
-          <NavLink key={link.level} className={linkStyle} to={link.path}>
-            {link.icon}
-            {link.level}
-          </NavLink>
-        ))}
+        <NavLink className={linkStyle} to="/">
+          <IoHome /> <span className="md:block hidden">Home</span>
+        </NavLink>
+
+        <NavLink className={linkStyle} to="/aboutme">
+          <IoPersonSharp /> <span className="md:block hidden">About Me</span>
+        </NavLink>
+
+        <NavLink className={linkStyle} to="/projects">
+          <GrTasks /> <span className="md:block hidden">Projects</span>
+        </NavLink>
+
+        <NavLink className={linkStyle} to="/skills">
+          <SiHyperskill /> <span className="md:block hidden">Skills</span>
+        </NavLink>
+
+        <NavLink className={linkStyle} to="/services">
+          <MdHomeRepairService />{" "}
+          <span className="md:block hidden">Services</span>
+        </NavLink>
+
+        <NavLink className={linkStyle} to="/resume">
+          <TbFileCv /> <span className="md:block hidden">Resume</span>
+        </NavLink>
+
+        <NavLink className={linkStyle} to="/contact">
+          <MdContactPhone /> <span className="md:block hidden">Conctact</span>
+        </NavLink>
+
+        <NavLink className={linkStyle} to="/ai">
+          <FaRobot /> <span className="md:block hidden">Ask AI</span>
+        </NavLink>
       </div>
       <Footer />
     </div>

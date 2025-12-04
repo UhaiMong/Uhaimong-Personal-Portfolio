@@ -182,56 +182,62 @@ export default function ChatBot() {
   };
 
   return (
-    <section className="w-10/12 h-screen px-6 lg:px-16 py-16 flex flex-col items-center text-white">
-      <h2 className="text-4xl font-bold mb-12 science-font">I'm Bot🤖</h2>
+    <>
+      {/* <Helmet>
+        <title>Chat Bot</title>
+        <meta name="description" content="Perfonal Portfolio Application" />
+      </Helmet> */}
+      <section className="w-10/12 h-screen px-6 lg:px-16 py-16 flex flex-col items-center text-white">
+        <h2 className="text-4xl font-bold mb-12 science-font">I'm Bot🤖</h2>
 
-      <div className="w-full bg-[var(--color-secondary-bg)] rounded-xl shadow-lg border border-white/10 p-4 flex flex-col justify-between gap-4">
-        {/* Messages */}
-        <div className="flex flex-col gap-3 max-h-96 overflow-y-auto mb-4">
-          {messages.map((msg, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, x: msg.type === "bot" ? -20 : 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.3 }}
-              className={`px-4 py-2 rounded-lg max-w-[80%] ${
-                msg.type === "bot"
-                  ? "bg-[var(--color-primary)]/20 self-start"
-                  : "bg-[var(--color-primary)] self-end"
-              }`}
+        <div className="w-full bg-[var(--color-secondary-bg)] rounded-xl shadow-lg border border-white/10 p-4 flex flex-col justify-between gap-4">
+          {/* Messages */}
+          <div className="flex flex-col gap-3 max-h-96 overflow-y-auto mb-4">
+            {messages.map((msg, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: msg.type === "bot" ? -20 : 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.3 }}
+                className={`px-4 py-2 rounded-lg max-w-[80%] ${
+                  msg.type === "bot"
+                    ? "bg-[var(--color-primary)]/20 self-start"
+                    : "bg-[var(--color-primary)] self-end"
+                }`}
+              >
+                {msg.type === "bot" ? (
+                  <Typewriter
+                    options={{ delay: 25 }}
+                    onInit={(typewriter) => {
+                      typewriter.typeString(msg.text).start();
+                    }}
+                  />
+                ) : (
+                  msg.text
+                )}
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Input */}
+          <div className="flex gap-2">
+            <input
+              type="text"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyDown={handleKeyPress}
+              placeholder="Type your question..."
+              className="flex-1 p-3 rounded bg-[var(--color-primary-bg)] text-white border border-white/20 focus:border-[var(--color-primary)] outline-none transition"
+            />
+            <button
+              onClick={handleSend}
+              className="px-4 py-2 bg-[var(--color-primary)] rounded hover:opacity-90 transition"
             >
-              {msg.type === "bot" ? (
-                <Typewriter
-                  options={{ delay: 25 }}
-                  onInit={(typewriter) => {
-                    typewriter.typeString(msg.text).start();
-                  }}
-                />
-              ) : (
-                msg.text
-              )}
-            </motion.div>
-          ))}
+              Send
+            </button>
+          </div>
         </div>
-
-        {/* Input */}
-        <div className="flex gap-2">
-          <input
-            type="text"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            onKeyDown={handleKeyPress}
-            placeholder="Type your question..."
-            className="flex-1 p-3 rounded bg-[var(--color-primary-bg)] text-white border border-white/20 focus:border-[var(--color-primary)] outline-none transition"
-          />
-          <button
-            onClick={handleSend}
-            className="px-4 py-2 bg-[var(--color-primary)] rounded hover:opacity-90 transition"
-          >
-            Send
-          </button>
-        </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

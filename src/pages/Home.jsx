@@ -1,43 +1,49 @@
 import Typewriter from "typewriter-effect";
 const Home = () => {
   return (
-    <div>
-      <div className="relative w-full h-screen bg-[url('hero.jpg')] bg-cover bg-no-repeat bg-center">
-        <div className="absolute inset-0 bg-black opacity-80"></div>
-        <div className="absolute inset-0 flex flex-col items-center justify-center">
-          <h1 className="text-[var(--color-secondary)] text-3xl font-bold text-center">
-            <span className="text-center text-5xl pb-3 playfair-font">
-              I'm{" "}
-              <span className="text-[var(--color-primary)] uppercase">
-                Uhai Mong
+    <>
+      {/* <Helmet>
+        <title>Uhai Mong</title>
+        <meta name="description" content="Perfonal Portfolio Application" />
+      </Helmet> */}
+      <div>
+        <div className="relative w-full h-screen bg-[url('hero.jpg')] bg-cover bg-no-repeat bg-center">
+          <div className="absolute inset-0 bg-black opacity-80"></div>
+          <div className="absolute inset-0 flex flex-col items-center justify-center">
+            <h1 className="text-[var(--color-secondary)] text-3xl font-bold text-center">
+              <span className="text-center text-5xl pb-3 playfair-font">
+                I'm{" "}
+                <span className="text-[var(--color-primary)] uppercase">
+                  Uhai Mong
+                </span>
               </span>
-            </span>
 
-            <Typewriter
-              options={{
-                strings: [
-                  "A Full Stack Web Developer",
-                  "Build Functional Web Application",
-                  "2 Years Experience on MERN",
-                ],
-                autoStart: true,
-                loop: true,
-                delay: 75,
-                deleteSpeed: 0,
-                cursor: "|",
-              }}
-            />
-          </h1>
+              <Typewriter
+                options={{
+                  strings: [
+                    "A Full Stack Web Developer",
+                    "Build Functional Web Application",
+                    "2 Years Experience on MERN",
+                  ],
+                  autoStart: true,
+                  loop: true,
+                  delay: 75,
+                  deleteSpeed: 0,
+                  cursor: "|",
+                }}
+              />
+            </h1>
+          </div>
         </div>
-      </div>
-      {/* <div className="h-screen w-full">
+        {/* <div className="h-screen w-full">
         <img
           className="h-full w-full object-cover"
           src="hero.jpg"
           alt="Banner Image"
         />
       </div> */}
-    </div>
+      </div>
+    </>
   );
 };
 
